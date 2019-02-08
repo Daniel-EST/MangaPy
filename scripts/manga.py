@@ -43,6 +43,6 @@ class Manga():
                 filepath = os.path.join(self.title, chnum)
                 os.makedirs(filepath, exist_ok=True)
                 
-                print('Baixando: ' + chnum)
+                print('Downloading chapter: ' + chnum)
                 
                 mr_downpg(chapter, filepath)

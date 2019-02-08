@@ -18,11 +18,14 @@ def mr_downpg(ch_url, filepath):
         
         page_number = '0'*(3-len(str(page_number))) + str(page_number)
         
-        page_req = requests.get(page).content
-        page_img = bs4.BeautifulSoup(page_req)
+        page_req = requests.get(page).text
+        page_html = bs4.BeautifulSoup(page_req, "html.parser")
         
-        filename = os.path.join(filepath, page_number)
+        img_scr = page_html.select('#imgholder #img')[0].get('src')     
+        img_req = requests.get(img_scr).content   
+        
+        filename = os.path.join(filepath, page_number)      
         with open(filename + '.png', 'wb') as f_obj:
-            f_obj.write(page_req)
+            f_obj.write(img_req)
         
         page_number = int(page_number) + 1
