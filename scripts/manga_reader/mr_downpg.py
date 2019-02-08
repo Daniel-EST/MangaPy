@@ -25,7 +25,7 @@ def mr_downpg(ch_url, filepath):
         img_req = requests.get(img_scr).content   
         
         filename = os.path.join(filepath, page_number)      
-        with open(filename + '.png', 'wb') as f_obj:
+        with open(filename + '.jpg', 'wb') as f_obj:
             f_obj.write(img_req)
         
         page_number = int(page_number) + 1
