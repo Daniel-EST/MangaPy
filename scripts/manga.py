@@ -21,11 +21,18 @@ class Manga():
             
     def choose_chapters(self):
         """Choose what chapters you want to download"""
-        self.chapters = self.chapters[5]
+        start = input('Download from: ')
+        start = int(start)
+        
+        end = input('to: ')
+        end = int(end)
+        
+        start -= 1
+        
+        self.chapters = self.chapters[start:end]
             
     def download_chapters(self):
         """Downlaods pages from the choosen chapter."""
-        print('Choose the download folder')
         if self.server=='manga reader':
             for chapter in self.chapters:
                 print(chapter)
