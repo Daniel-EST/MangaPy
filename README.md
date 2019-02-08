@@ -9,7 +9,6 @@ Personal use, studying purposes.
 
 # Future updates
 -	Website selection option
--	Chapter range selection
 -	User interface (maybe)
 
 # Known Issues
