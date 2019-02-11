@@ -1,5 +1,6 @@
 import re
 import os
+import threading
 
 from manga_reader.mr_getch import mr_getch
 from manga_reader.mr_downpg import mr_downpg
