@@ -44,5 +44,8 @@ class Manga():
                 os.makedirs(filepath, exist_ok=True)
                 
                 print('Downloading chapter: ' + chnum)
-                
-                mr_downpg(chapter, filepath)
+                downloadThreads = []             # a list of all the Thread objects
+                for i in range(0, 1400, 100):    # loops 14 times, creates 14 threads
+                    downloadThread = threading.Thread(target=mr_downpg, args=(chapter, filepath))
+                    downloadThreads.append(downloadThread)
+                    downloadThread.start()
