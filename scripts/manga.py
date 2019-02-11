@@ -18,11 +18,11 @@ class Manga():
         if self.server=='manga reader':
             self.title = self.title.replace(' ', '-')
             self.chapters = mr_getch(self.title)
-		
+
         elif self.server=="kissmanga":
-		    self.title = self.title.replace(' ', '-').title()
+            self.title = self.title.replace(' ', '-').title()
             self.chapters = km_getch(self.title)
-			
+
     def choose_chapters(self):
         """Choose what chapters you want to download"""
         start = input('Download from: ')
