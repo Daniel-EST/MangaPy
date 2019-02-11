@@ -1,8 +1,5 @@
-#https://automatetheboringstuff.com/chapter15/
-
 import re
 import os
-import threading
 
 from manga_reader.mr_getch import mr_getch
 from manga_reader.mr_downpg import mr_downpg
@@ -21,7 +18,11 @@ class Manga():
         if self.server=='manga reader':
             self.title = self.title.replace(' ', '-')
             self.chapters = mr_getch(self.title)
-            
+		
+        elif self.server=="kissmanga":
+		    self.title = self.title.replace(' ', '-').title()
+            self.chapters = km_getch(self.title)
+			
     def choose_chapters(self):
         """Choose what chapters you want to download"""
         start = input('Download from: ')
@@ -47,8 +48,5 @@ class Manga():
                 os.makedirs(filepath, exist_ok=True)
                 
                 print('Downloading chapter: ' + chnum)
-                downloadThreads = []             # a list of all the Thread objects
-                for i in range(0, 1400, 100):    # loops 14 times, creates 14 threads
-                    downloadThread = threading.Thread(target=mr_downpg, args=(chapter, filepath))
-                    downloadThreads.append(downloadThread)
-                    downloadThread.start()
+                
+                mr_downpg(chapter, filepath)

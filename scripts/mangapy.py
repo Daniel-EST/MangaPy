@@ -1,6 +1,6 @@
 from manga import Manga
 
-available_servers = ['manga reader', 'manga rock', 'kiss manga']
+available_servers = ['manga reader', 'manga rock', 'kissmanga']
 
 while True:
     server = input('In what server you want to download: ')
