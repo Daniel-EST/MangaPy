@@ -8,6 +8,8 @@ I love reading manga, but I can't stand doing it at computer. So, I always downl
 Personal use, studying purposes.
 
 # Future updates
+- Add sysargs
+- Multithreading
 -	Website selection option
 -	User interface (maybe)
 
