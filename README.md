@@ -9,7 +9,7 @@ Personal use, studying purposes.
 
 # Future updates
 - Add sysargs
-- Multithreading
+- Turn it async
 -	Website selection option
 -	User interface (maybe)
 
